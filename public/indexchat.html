@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style2.css" type="text/css">
+    <title>Chat Application</title>
+</head>
+<body>
+    <section id="main">
+        <div class="header">
+            <h4 class="log">QlinChat</h4>
+            <div class="user"></div>
+            <h5 class="room">Room Name</h5>
+        </div>
+        <div class="message-body"></div>
+        <div class="message-form">
+            <input type="text" name="txt-msg" placeholder="Type your message...">
+            <label for="imageInput" class="icon-button" aria-label="Attach file" title="Attach file"><i class="fa-solid fa-paperclip" aria-hidden="true"></i></label>
+            <input type="file" name="fileShare" id="imageInput" accept="image/*,video/*,audio/*,.zip,application/zip,application/x-zip-compressed" style="display:none;">
+            <button type="button" class="icon-button send-button" onclick="sendClick()" aria-label="Send message" title="Send message"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+        </div>
+    </section>
+    <div class="image-lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+        <button type="button" class="lightbox-close" aria-label="Close image preview" title="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <img class="lightbox-image" alt="Full-size image preview">
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js?v=20261008-compat1"></script>
+</body>
+</html>
